@@ -14,9 +14,11 @@ git submodule foreach git checkout master
 
 1. Install MinGW, make sure `gcc`, `g++` and `gfortran` are in `$PATH`.
 
-2. Open CMD
+2. Setup the minimal installation of Python3 with pip. Using pip install scipy, numpy, networkx and pyinstaller. Fix the path to python and pyinstaller in 13th line of `build.cmd`.
 
-3. Execute
+3. Open CMD and change directory to `sc_windows`.
+
+4. Execute
 
 ```
 build.cmd
@@ -33,7 +35,7 @@ driver.exe test
 ## Use
 
 
-To run generator of conformers:
+To run generation of conformers:
  
 ```
 driver.exe <name of config file>
