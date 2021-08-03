@@ -69,6 +69,7 @@ try:
                     goodtimes.append(newtime)
                 else:
                     badtimes.append(newtime)
+                    mol.perturb_geometry()
                     logger.info("Couldn't generate the initial conformation. Trying again.")
                     continue
                 backup_ps = deepcopy(mol.getPS())
@@ -111,6 +112,7 @@ try:
                             if ps[i].value != backup_ps[i].value:
                                 ps[i].setValue(backup_ps[i].value)
                     mol.ccounter.recordState()
+                mol.perturb_geometry()
                 logger.warning("DDOF bruteforce is finished")
                 logger.warning("Progress with molecule %d/%d" % (len(goodtimes), config["Testing"].getint("NumberOfConfs")))
             end_total = time.perf_counter()
@@ -191,6 +193,7 @@ try:
                     it = config["MCDriver"].getint("MaxTries")
                     break
             if it == config["MCDriver"].getint("MaxTries"):
+                mol.perturb_geometry()
                 logger.warning("Couldn't generate the initial conformation. Trying again.")
                 continue
             backup_ps = deepcopy(mol.getPS())
@@ -227,6 +230,7 @@ try:
                         if ps[i].value != backup_ps[i].value:
                             ps[i].setValue(backup_ps[i].value)
                 mol.ccounter.recordState()
+            mol.perturb_geometry()
             logger.warning("DDOF bruteforce is finished")
         logger.warning("Normal termination. Generated totally %d conformations." % (conf_count))
 except Exception:
