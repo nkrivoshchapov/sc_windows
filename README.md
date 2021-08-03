@@ -1,5 +1,9 @@
 # Build of SC algorithm for Windows
 
+In case you are looking for the executable version: https://drive.google.com/file/d/1AU1G17APSrah6Cur8ZO9MDO2w6Q5frNL/view?usp=sharing
+
+Here is how to create the executable from source code:
+
 ## Clone
 
 ```
@@ -10,7 +14,7 @@ git submodule foreach git pull origin master
 git submodule foreach git checkout master
 ```
 
-## TLC build
+## Build
 
 1. Install MinGW, make sure `gcc`, `g++` and `gfortran` are in `$PATH`.
 
@@ -25,7 +29,7 @@ build.cmd
 ```
 
 
-## Testing
+## Test
 
 ```
 cd win_build
