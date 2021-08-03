@@ -1,0 +1,4 @@
+[submodule "simple_condensation"]
+	path = simple_condensation
+	url = git@github.com:nkrivoshchapov/simple_condensation.git
+	branch = master
